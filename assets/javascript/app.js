@@ -1,8 +1,10 @@
 var topics = ["the simpsons", "family guy", "south park", "cowboy bebop"];
 
 function displayGifs() {
+    $("#gif-view").empty();
+
     var topic = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ahqx3ZZ65oFYw1Pjv8VHJLX7jnLscgfm&q=" + topic + "&limit=5&offset=0&lang=en";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ahqx3ZZ65oFYw1Pjv8VHJLX7jnLscgfm&q=" + topic + "&limit=10&offset=0&lang=en";
 
         $.ajax({
         url: queryURL,
@@ -62,6 +64,13 @@ function renderButtons() {
         $("#buttons-view").append(item);
     }
 }
+
+$("#add-cartoon").on("click", function() {
+    event.preventDefault();
+    var cartoon = $("#cartoon-input").val().trim();
+    topics.push(cartoon);
+    renderButtons();
+});
 
 $(document).on("click", ".topic", displayGifs);
 // $(document).on("click", ".gifs", console.log(this));
