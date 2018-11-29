@@ -10,3 +10,11 @@ body {
     display: inline-block;
     margin: 5px;
 }
+
+#add-cartoon {
+    margin: 0px;
+}
+
+#form-label {
+    font-weight: bold;
+}
