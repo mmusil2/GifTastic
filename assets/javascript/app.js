@@ -1,4 +1,4 @@
-var topics = ["the simpsons", "family guy", "south park", "cowboy bebop"];
+var topics = ["the simpsons", "family guy", "south park", "cowboy bebop", "spongebob", "rick and morty", "american dad", "dragonball z"];
 
 function displayGifs() {
     $("#gif-view").empty();
